@@ -21,6 +21,11 @@ namespace LeaveManagement.Models
         public int LeaveTypeId { get; set; }
         public IEnumerable<SelectListItem> Employees { get; set; }
         public IEnumerable<SelectListItem> LeaveTypes { get; set; }
+    }
 
+    public class CreateLeaveAllocationViewModel
+    {
+        public int NumberUpdated { get; set; }
+        public List<LeaveTypeViewModel> LeaveTypes { get; set; }
     }
 }

@@ -57,5 +57,12 @@ namespace LeaveManagement.Repository
             var changes = _db.SaveChanges();
             return changes > 0;
         }
+
+        public bool CheckAllocation(int leaveTypeId, string employeeId)
+        {
+            var period = DateTime.Now.Year;
+            return FindAll()
+                .Any(q => q.EmployeeId == employeeId && q.LeaveTypeId == leaveTypeId && q.Period == period);
+        }
     }
 }
