@@ -27,6 +27,18 @@ namespace LeaveManagement.Models
         public List<LeaveTypeViewModel> LeaveTypes { get; set; }
     }
 
+    public class EditLeaveAllocationViewModel
+    {
+        public int Id { get; set; }
+        public EmployeeViewModel Employee { get; set; }
+        public string EmployeeId { get; set; }
+        [Display(Name = "Number Of Days")]
+        [Range(1, 50, ErrorMessage = "Enter Valid Number")]
+        public int NumberOfDays { get; set; }
+        public LeaveTypeViewModel LeaveType { get; set; }
+
+    }
+
     public class ViewAllocationsViewModel
     {
         public EmployeeViewModel Employee { get; set; }
